@@ -49,12 +49,13 @@
             </nav>
         </div>
     </header>
-    <div class="partial" ng-view>
-        <!--
-           This DIV loads templates depending upon route.
-       -->
+    <div id = "partial-wrapper">
+        <div class="partial {{ pageClass }}" ng-view>
+            <!--
+               This DIV loads templates depending upon route.
+           -->
+        </div>
     </div>
-
     <div id="footer">
         <span>Jaspreet GitHub Page</span>
     </div>

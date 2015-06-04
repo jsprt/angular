@@ -6,16 +6,27 @@
 }
 
 #footer{
+    position: absolute;
     padding-top: 10px;
     background-color: black;
     text-align: center;
     height: 50px;
 }
 div.partial div:first-child{
-    padding-top: 20%;
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    padding-top: 30%;
     text-align: center;
-    height: 600px;
+    height: 100%;
     width: 100%;
+}
+
+#partial-wrapper{
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 80%;
 }
 #home{
     background-color: cadetblue;
@@ -38,11 +49,10 @@ div.partial div:first-child{
     background-color: palevioletred;
 }
 
-/* Enter */
-@keyframes slideInRight {
-    from    { transform:translateX(100%); }
-    to      { transform: translateX(0); }
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
 }
+
 
 /* Leave */
 @keyframes slideOutLeft {
@@ -50,8 +60,13 @@ div.partial div:first-child{
 }
 
 
+/* Enter */
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
 
-.partial.ng-enter           { animation: slideInRight 0.5s both ease-in; z-index: 8888; }
-.partial.ng-leave           { animation: slideOutLeft 0.5s both ease-in; z-index: 9999; }
 
-
+div[class*="partial-"].ng-leave           { animation: slideOutLeft 0.5s both ease-in; z-index: 9999; }
+div[class*="partial-page"].ng-enter,div[class*="partial-main"].ng-enter             { animation: slideInRight 0.5s both ease-in; z-index: 8888; }
+.partial-home.ng-enter                          { animation: scaleUp 0.5s both ease-in; z-index: 8888; }
