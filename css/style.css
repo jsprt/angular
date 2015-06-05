@@ -1,84 +1,101 @@
 
-#container{
+#container {
     margin: auto;
     width: 80%;
     height: 100%;
     overflow: hidden;
 }
 
-#footer{
+#footer {
     color: #ffffff;
     position: absolute;
-    bottom:0px;
+    bottom: 0px;
     padding-top: 10px;
     background-color: black;
     text-align: center;
     height: 10%;
-    width: 100%%;
+    width: 100%;
 }
 
-
-#home, #page1, #page2, #page3, #page4, #main,
-div.partial div:first-child{
+.partial-content {
     position: absolute;
     left: 0px;
+    top: 0px;
     padding-top: 10%;
     text-align: center;
     height: 90%;
     width: 100%;
 }
 
-#partial-wrapper{
+#partial-wrapper {
     position: absolute;
     overflow: hidden;
     height: 100%;
     width: 80%;
 }
-#home{
+
+div[class*="partial"] {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+#home {
     background-color: cadetblue;
 }
 
-
-#page1{
+#page1 {
     background-color: chocolate;
 }
 
-#page2{
+#page2 {
     background-color: darkolivegreen;
 }
 
-#page3{
+#page3 {
     background-color: cornflowerblue;
 }
 
-#main{
+#main {
     background-color: palevioletred;
 }
 
 @keyframes scaleUp {
-    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+    from {
+        opacity: 0.3;
+        -webkit-transform: scale(0.8);
+    }
 }
-
 
 /* Leave */
 @keyframes slideOutLeft {
-    to      { transform: translateX(-100%); }
+    to {
+        transform: translateX(-100%);
+    }
 }
-
 
 /* Enter */
 @keyframes slideInRight {
-    from    { transform:translateX(100%); }
-    to      { transform: translateX(0); }
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
+div[class*="partial-"].ng-leave {
+    animation: slideOutLeft 0.5s both ease-in;
+    position: absolute;
+    z-index: 9999;
+    height: 100%;
+}
 
-div[class*="partial-"].ng-leave
-{ animation: slideOutLeft 0.5s both ease-in; z-index: 9999; height: 100%}
-
-div[class*="partial-page"].ng-enter,
-div[class*="partial-main"].ng-enter
-{ animation: slideInRight 0.5s both ease-in; z-index: 8888; height: 100%}
-
-.partial-home.ng-enter
-{ animation: scaleUp 0.5s both ease-in; z-index: 8888; }
+div[class*="partial-"].ng-enter,
+div[class*="partial-"].ng-enter {
+    animation: slideInRight 0.5s both ease-in;
+    position: absolute;
+    z-index: 8888;
+    height: 100%;
+}
