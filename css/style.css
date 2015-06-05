@@ -14,7 +14,7 @@
     background-color: black;
     text-align: center;
     height: 10%;
-    width: 80%;
+    width: 100%%;
 }
 
 
@@ -74,11 +74,11 @@ div.partial div:first-child{
 
 
 div[class*="partial-"].ng-leave
-{ animation: slideOutLeft 0.5s both ease-in; z-index: 9999; }
+{ animation: slideOutLeft 0.5s both ease-in; z-index: 9999; height: 100%}
 
 div[class*="partial-page"].ng-enter,
 div[class*="partial-main"].ng-enter
-{ animation: slideInRight 0.5s both ease-in; z-index: 8888; }
+{ animation: slideInRight 0.5s both ease-in; z-index: 8888; height: 100%}
 
 .partial-home.ng-enter
 { animation: scaleUp 0.5s both ease-in; z-index: 8888; }
